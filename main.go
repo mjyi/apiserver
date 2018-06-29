@@ -10,6 +10,7 @@ import (
 	"github.com/mjyi/apiserver/config"
 	"github.com/mjyi/apiserver/model"
 	"github.com/mjyi/apiserver/router"
+	"github.com/mjyi/apiserver/router/middleware"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 )
@@ -36,14 +37,14 @@ func main() {
 	// Create the Gin engine.
 	g := gin.New()
 
-	var middlewares []gin.HandlerFunc
+	//var middlewares []gin.HandlerFunc
 
 	// Routes.
 	router.Load(
 		// Cores.
 		g,
 		// Middlwares.
-		middlewares...,
+		middleware.RequestId(),
 	)
 
 	// Ping the server to make sure the router is working.

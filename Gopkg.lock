@@ -132,6 +132,12 @@
   version = "v1.2.0"
 
 [[projects]]
+  name = "github.com/satori/go.uuid"
+  packages = ["."]
+  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
+  version = "v1.2.0"
+
+[[projects]]
   name = "github.com/shirou/gopsutil"
   packages = [
     "cpu",
@@ -187,6 +193,12 @@
   packages = ["codec"]
   revision = "b4c50a2b199d93b13dc15e78929cfb23bfdf21ab"
   version = "v1.1.1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/willf/pad"
+  packages = ["."]
+  revision = "b3d7806010228b1a954b4d9c4ee4cf6cb476b063"
 
 [[projects]]
   branch = "master"
@@ -246,6 +258,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "88e790e3b670b813f3e05462f2c137e28972b11d7acfcc6c414e5020cbb80ed0"
+  inputs-digest = "f08f3cf16ec5b9ddab034ae08cdffbf100ab0878c7953defd51859abe0493f2c"
   solver-name = "gps-cdcl"
   solver-version = 1
