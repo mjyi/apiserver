@@ -1,1 +1,1 @@
-实战：初始化Mysql数据库并建立连接
+# 通过 Gin 构建一个RESTful API 服务

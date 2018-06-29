@@ -3,16 +3,13 @@ package user
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
-	"github.com/lexkong/log/lager"
 	"github.com/mjyi/apiserver/handler"
 	"github.com/mjyi/apiserver/model"
 	"github.com/mjyi/apiserver/pkgs/errno"
-	"github.com/mjyi/apiserver/util"
 )
 
 // Create :create a new account.
 func Create(c *gin.Context) {
-	log.Info("User Create function called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 
 	var r CreateRequest
 
@@ -25,7 +22,6 @@ func Create(c *gin.Context) {
 		Username: r.Username,
 		Password: r.Password,
 	}
-
 	if err := u.Validate(); err != nil {
 		handler.SendResponse(c, errno.ErrValidation, nil)
 		return

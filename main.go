@@ -33,17 +33,13 @@ func main() {
 
 	// Set gin mode.
 	gin.SetMode(viper.GetString("runmode"))
-
 	// Create the Gin engine.
 	g := gin.New()
-
-	//var middlewares []gin.HandlerFunc
-
 	// Routes.
 	router.Load(
-		// Cores.
-		g,
+		g, // Cores.
 		// Middlwares.
+		middleware.Logging(),
 		middleware.RequestId(),
 	)
 
@@ -67,7 +63,6 @@ func pingServer() error {
 		if err == nil && resp.StatusCode == 200 {
 			return nil
 		}
-
 		// Sleep for a second to continue the next ping.
 		log.Info("Waiting for the router, retry in 1 second.")
 		time.Sleep(time.Second)

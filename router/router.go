@@ -22,6 +22,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		c.String(http.StatusNotFound, "The incorrect API route.")
 	})
 
+	g.POST("/login", user.Login) // // api for authentication functionalities
 	// 用户路由设置
 	u := g.Group("/v1/user")
 	{
